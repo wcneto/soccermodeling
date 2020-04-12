@@ -1,3 +1,27 @@
-ID: SoccerModeling
+ID: modelingproject
 _schema-version: '2.1'
 version: 0.0.1
+
+modules:
+ - name: modelinghdbmod
+   type: hdb
+   path: modelinghdbmod
+   requires:
+    - name: hdi_modelinghdbmod_2
+
+ 
+
+resources:
+ - name: hdi_modelinghdbmod
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
+
+ - name: hdi_modelinghdbmod_2
+   parameters:
+      config:
+         schema: SOCCER
+   properties:
+      hdi-container-name_2: ${service-name}
+   type: com.sap.xs.hdi-container
+
